@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <div class="row">
+
+     <div class="col-lg-9">
+
+       <h3>Listado Coches</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>MATRICULA</th>
+              <th>COLOR</th>
+              <th>MARCA</th>
+              <th>MODELO</th>
+              <th>CONSUMO</th>
+              <th>PRECIO</th>
+              <th>KMS</th>
+              <th>TIPOMOTOR</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of listadoCoches">
+              <td>{{c.matricula}}</td>
+              <td>{{c.color}}</td>
+              <td>{{c.marca}}</td>
+              <td>{{c.modelo}}</td>
+              <td>{{c.consumo}}</td>
+              <td>{{c.precio}}</td>
+              <td>{{c.kms}}</td>
+              <td>{{c.tipoMotor}}</td>
+
+              <td><button class="btn btn-info" (click)="seleccionar(c)">Seleccionar</button>
+              <td><button class="btn btn-success" (click)="eliminar(c)">Eliminar</button></td>
+
+            </tr>
+
+          </tbody>
+        </table>
+
+     </div>
+     <div class="col-lg-3">
+       <div class="form-group">
+        <h3>Formulario Insertar/Modificar</h3>
+        <label for="matricula">Matricula</label>
+         <input type="text" name="matricula" id="matricula" class="form-control" placeholder="teclea color" aria-describedby="helpId" [(ngModel)]="cocheSeleccionado.matricula">
+        
+
+         <label for="color">Color</label>
+         <input type="text" name="color" id="color" class="form-control" placeholder="teclea color" aria-describedby="helpId" [(ngModel)]="cocheSeleccionado.color">
+
+       </div>
+       <div class="form-group">
+        <label for="marca">Marca</label>
+        <input type="text" name="marca" id="marca" class="form-control" placeholder="teclea color" aria-describedby="helpId" [(ngModel)]="cocheSeleccionado.marca">
+
+      </div>
+      <div class="form-group">
+        <label for="modelo">Modelo</label>
+        <input type="text" name="modelo" id="modelo" class="form-control" placeholder="teclea color" aria-describedby="helpId" [(ngModel)]="cocheSeleccionado.modelo">
+
+      </div>
+      <div class="form-group">
+        <label for="consumo">Consumo</label>
+        <input type="number" name="consumo" id="consumo" class="form-control" placeholder="teclea color" aria-describedby="helpId" [(ngModel)]="cocheSeleccionado.consumo">
+
+      </div>
+      <div class="form-group">
+        <label for="precio">Precio</label>
+        <input type="number" name="precio" id="precio" class="form-control" placeholder="teclea color" aria-describedby="helpId" [(ngModel)]="cocheSeleccionado.precio">
+
+      </div>
+      <div class="form-group">
+        <label for="kms">Kms</label>
+        <input type="number" name="kms" id="kms" class="form-control" placeholder="teclea color" aria-describedby="helpId" [(ngModel)]="cocheSeleccionado.kms">
+
+      </div>
+      <div class="form-group">
+        <label for="tipoMotor">TipoMotor</label>
+        <input type="text" name="tipoMotor" id="tipoMotor" class="form-control" placeholder="teclea color" aria-describedby="helpId" [(ngModel)]="cocheSeleccionado.tipoMotor">
+
+      </div>
+      <button class="btn btn-danger" (click)="crearCoche()">Insertar Coche</button>
+      <button class="btn btn-warning" (click)="modificarCoche()">Modificar Coche</button>
+
+     </div>
+    </div>
+
+
+
+</div>
